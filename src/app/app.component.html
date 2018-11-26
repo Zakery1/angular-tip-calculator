@@ -2,7 +2,7 @@
 <div class="calculator">
   <h1>Tip Calculator</h1>
   <div *ngIf="showSubInput">
-    Subtotal: <input [(ngModel)]="subtotal" type="number" min="0">
+    Subtotal: <input [(ngModel)]="subtotal" type="number" min=".01">
     <button (click)="showWithTax()">Submit</button>
   </div>
   <div *ngIf="showTaxAdded">
