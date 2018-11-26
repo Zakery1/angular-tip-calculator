@@ -7,11 +7,20 @@
   </div>
   <div *ngIf="showTaxAdded">
     Bill with tax:   ${{subtotalWithTax}} <br>
+  </div>
+  <div *ngIf="showTipRequest">
     How much will you tip? <input type="text" [(ngModel)]="tipPercentage" maxlength="3">%
     <br><button (click)="calculateTip()">Submit tip percentage</button>
+  </div>
   <div *ngIf="showTipAmount">
-    You will tip ${{tipAmount}}
-    confirm? <button (click)="confirmTip()" >Yes</button> 
+    You will tip ${{tipAmount}}, {{tipPercentage}}% of your bill.
+    <br>
+    Confirm? <button (click)="confirmTip()">Yes</button> <button (click)="changeTip()">Change Tip Amount</button>
+  </div>
+  <div *ngIf="tipConfirmed">
+    Tip: ${{tipAmount}} <br>
+    Grand Total:  ${{grandTotal}}
+    <button (click)="startOver()">Start Over</button>
   </div>
 </div>
 
