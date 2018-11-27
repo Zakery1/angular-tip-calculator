@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { TipStep } from './enums/tip-steps.enum';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
+
+  @Input() tipState: TipStep;
+
+  step = TipStep;
+
   title = 'angular-tip-calculator';
   subtotalWithTax: number;
   subtotal: number;
@@ -31,7 +37,6 @@ export class AppComponent {
     this.showTipAmount = !this.showTipAmount;
     this.tipSubmitted = !this.tipSubmitted;
     this.showTipRequest = !this.showTipRequest;
-
   }
 
   confirmTip(){

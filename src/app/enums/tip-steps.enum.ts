@@ -1,4 +1,4 @@
-export enum TipSteps {
+export enum TipStep {
     subtotal = 1,
     tip = 2,
     confirm = 3,
