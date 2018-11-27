@@ -25,33 +25,33 @@ export class AppComponent {
   grandTotal: string;
   tipConfirmed = false;
 
-  showWithTax(){
-    this.subtotalWithTax = +(this.subtotal*1.07).toFixed(2);
+  showWithTax() {
+    this.subtotalWithTax = +(this.subtotal * 1.07).toFixed(2);
     this.showSubInput = !this.showSubInput;
     this.showTaxAdded = !this.showTaxAdded;
     this.showTipRequest = !this.showTipRequest;
   }
 
-  calculateTip(){
-    this.tipAmount = (this.tipPercentage/100*this.subtotalWithTax).toFixed(2);
+  calculateTip() {
+    this.tipAmount = (this.tipPercentage / 100 * this.subtotalWithTax).toFixed(2);
     this.showTipAmount = !this.showTipAmount;
     this.tipSubmitted = !this.tipSubmitted;
     this.showTipRequest = !this.showTipRequest;
   }
 
-  confirmTip(){
-    this.grandTotal = (+this.tipAmount + this.subtotalWithTax).toFixed(2)
+  confirmTip() {
+    this.grandTotal = (+this.tipAmount + this.subtotalWithTax).toFixed(2);
     this.tipConfirmed = !this.tipConfirmed;
     this.showTipAmount = !this.showTipAmount;
   }
 
-  changeTip(){
+  changeTip() {
     this.showTipAmount = !this.showTipAmount;
     this.tipSubmitted = !this.tipSubmitted;
     this.showTipRequest = !this.showTipRequest;
   }
 
-  startOver(){
+  startOver() {
     this.subtotal = null;
     this.tipPercentage = null;
     this.showSubInput = !this.showSubInput;
