@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  bigNav = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  enlargeNavBar() {
+    this.bigNav = !this.bigNav;
   }
 
 }

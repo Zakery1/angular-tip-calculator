@@ -1,6 +1,10 @@
-<div class="navbar">
+<div class="navbar" [ngClass]="{'my-class': bigNav }">
 	<div class="nav-items">
 		<a class="nav-items" href="">Home</a>
-		<button class="nav-items">englarge navbar</button>
+		<button (click)="bigNav = !bigNav" class="nav-items">englarge navbar</button>
+	</div>
+	<br>
+	<div class="hidden">
+		Hello
 	</div>
 </div>
