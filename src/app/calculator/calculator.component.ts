@@ -9,6 +9,8 @@ export class CalculatorComponent implements OnInit {
 
   constructor() { }
 
+  
+
   ngOnInit() {
   }
 
