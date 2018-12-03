@@ -1,3 +1,4 @@
+import { ChatModule } from './chat/chat.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -16,7 +17,8 @@ import { CalculatorComponent } from './calculator/calculator.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ChatModule
   ],
   providers: [],
   bootstrap: [AppComponent]
