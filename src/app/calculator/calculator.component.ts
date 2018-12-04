@@ -27,10 +27,12 @@ export class CalculatorComponent implements OnInit {
   tipConfirmed = false;
 
   showWithTax() {
+    if( this.subtotal !==undefined) {
     this.subtotalWithTax = +(this.subtotal * 1.07).toFixed(2);
     this.showSubInput = !this.showSubInput;
     this.showTaxAdded = !this.showTaxAdded;
     this.showTipRequest = !this.showTipRequest;
+  }
   }
 
   calculateTip() {
