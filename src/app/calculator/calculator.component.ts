@@ -36,10 +36,12 @@ export class CalculatorComponent implements OnInit {
   }
 
   calculateTip() {
+    if ( this.tipPercentage !== undefined ) {
     this.tipAmount = (this.tipPercentage / 100 * this.subtotalWithTax).toFixed(2);
     this.showTipAmount = !this.showTipAmount;
     this.tipSubmitted = !this.tipSubmitted;
     this.showTipRequest = !this.showTipRequest;
+    }
   }
 
   confirmTip() {
