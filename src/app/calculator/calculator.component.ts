@@ -25,6 +25,7 @@ export class CalculatorComponent implements OnInit {
   tipSubmitted = false;
   grandTotal: string;
   tipConfirmed = false;
+  showTipSplit = false;
 
   showWithTax() {
     if( this.subtotal !==undefined) {
@@ -48,6 +49,10 @@ export class CalculatorComponent implements OnInit {
     this.grandTotal = (+this.tipAmount + this.subtotalWithTax).toFixed(2);
     this.tipConfirmed = !this.tipConfirmed;
     this.showTipAmount = !this.showTipAmount;
+  }
+
+  splitTip() {
+    this.showTipSplit = !this.showTipSplit;
   }
 
   changeTip() {
