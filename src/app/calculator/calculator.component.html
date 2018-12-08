@@ -18,7 +18,9 @@
     <button (click)="splitTip()">Split the Tip</button>
     Confirm? <button (click)="confirmTip()">Yes</button> <button class="big-button" (click)="changeTip()">Change Tip Amount</button>
   </div>
-  <div *ngIf="showTipSplit">tip split</div>
+  <div *ngIf="showTipSplit">
+    <button (click)="splitTip()">Nevermind</button>
+  </div>
   <div *ngIf="tipConfirmed">
     Tip: ${{tipAmount}} <br>
     Grand Total:  ${{grandTotal}} <br>
