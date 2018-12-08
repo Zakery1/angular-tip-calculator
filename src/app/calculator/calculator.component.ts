@@ -12,7 +12,6 @@ export class CalculatorComponent implements OnInit {
   @Input() tipState: TipStep;
 
   step = TipStep;
-
   title = 'angular-tip-calculator';
   subtotalWithTax: number;
   subtotal: number;
@@ -26,23 +25,25 @@ export class CalculatorComponent implements OnInit {
   grandTotal: string;
   tipConfirmed = false;
   showTipSplit = false;
+  splitters: number;
+  splitTotals: number;
 
   showWithTax() {
     if( this.subtotal !==undefined) {
-    this.subtotalWithTax = +(this.subtotal * 1.07).toFixed(2);
-    this.showSubInput = !this.showSubInput;
-    this.showTaxAdded = !this.showTaxAdded;
-    this.showTipRequest = !this.showTipRequest;
-  }
+      this.subtotalWithTax = +(this.subtotal * 1.07).toFixed(2);
+      this.showSubInput = !this.showSubInput;
+      this.showTaxAdded = !this.showTaxAdded;
+      this.showTipRequest = !this.showTipRequest;
+    }
   }
 
   calculateTip() {
     if ( this.tipPercentage !== undefined ) {
-    this.tipAmount = (this.tipPercentage / 100 * this.subtotalWithTax).toFixed(2);
-    this.showTipAmount = !this.showTipAmount;
-    this.tipSubmitted = !this.tipSubmitted;
-    this.showTipRequest = !this.showTipRequest;
-    }
+      this.tipAmount = (this.tipPercentage / 100 * this.subtotalWithTax).toFixed(2);
+      this.showTipAmount = !this.showTipAmount;
+      this.tipSubmitted = !this.tipSubmitted;
+      this.showTipRequest = !this.showTipRequest;
+      }
   }
 
   confirmTip() {
@@ -53,6 +54,15 @@ export class CalculatorComponent implements OnInit {
 
   splitTip() {
     this.showTipSplit = !this.showTipSplit;
+  }
+
+  split() {
+    this.grandTotal = (+this.tipAmount + this.subtotalWithTax).toFixed(2);
+    this.splitTotals = (+this.grandTotal/this.splitters);
+    console.log(this.splitTotals);
+    this.showTipAmount = !this.showTipAmount;
+    this.tipSubmitted = !this.tipSubmitted;
+    this.showTipRequest = !this.showTipRequest;
   }
 
   changeTip() {
