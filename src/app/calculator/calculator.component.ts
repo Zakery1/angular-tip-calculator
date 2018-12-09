@@ -46,12 +46,6 @@ export class CalculatorComponent implements OnInit {
       }
   }
 
-  confirmTip() {
-    this.grandTotal = (+this.tipAmount + this.subtotalWithTax).toFixed(2);
-    this.tipConfirmed = !this.tipConfirmed;
-    this.showTipAmount = !this.showTipAmount;
-  }
-
   splitTip() {
     this.showTipSplit = !this.showTipSplit;
   }
@@ -63,12 +57,19 @@ export class CalculatorComponent implements OnInit {
     this.showTipAmount = !this.showTipAmount;
     this.tipSubmitted = !this.tipSubmitted;
     this.showTipRequest = !this.showTipRequest;
+    this.showTipSplit = !this.showTipSplit;
   }
 
   changeTip() {
     this.showTipAmount = !this.showTipAmount;
     this.tipSubmitted = !this.tipSubmitted;
     this.showTipRequest = !this.showTipRequest;
+  }
+
+  confirmTip() {
+    this.grandTotal = (+this.tipAmount + this.subtotalWithTax).toFixed(2);
+    this.tipConfirmed = !this.tipConfirmed;
+    this.showTipAmount = !this.showTipAmount;
   }
 
   startOver() {
