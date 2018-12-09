@@ -15,7 +15,7 @@
   <div *ngIf="showTipAmount">
     You will tip ${{tipAmount}}, this is {{tipPercentage}}% of your bill.
     <br>
-    <button (click)="splitTip()">Split the Tip</button>
+    <button (click)="splitTip()">Split the Bill</button>
     Confirm? <button (click)="confirmTip()">Yes</button> <button class="big-button" (click)="changeTip()">Change Tip Amount</button>
   </div>
   <div *ngIf="showTipSplit">
@@ -24,7 +24,8 @@
     <button (click)="split()">Split!</button>
   </div>
   <div *ngIf="showSplits">
-    {{splitters}} will tip ${{splitTotals}} each.
+    {{splitters}} people will pay ${{splitTotals}} each.
+    <button (click)="startOver()">Start Over</button>
   </div>
   <div *ngIf="tipConfirmed">
     Tip: ${{tipAmount}} <br>
