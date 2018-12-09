@@ -23,6 +23,9 @@
     How many people are splitting the tip?<input [(ngModel)]="splitters" type="number" type="text">
     <button (click)="split()">Split!</button>
   </div>
+  <div *ngIf="showSplits">
+    {{splitters}} will tip ${{splitTotals}} each.
+  </div>
   <div *ngIf="tipConfirmed">
     Tip: ${{tipAmount}} <br>
     Grand Total:  ${{grandTotal}} <br>
