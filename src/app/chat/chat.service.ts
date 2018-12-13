@@ -1,4 +1,4 @@
-import { ApiAiClient } from 'api-ai-javascript/es6/ApiAiClient'
+import { ApiAiClient } from 'api-ai-javascript/es6/ApiAiClient';
 import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 
